@@ -2,9 +2,11 @@
 
 A tools application by flask.
 
-## Set env config under .env file
+## Deploy to Local
 
-## Run migration by alembic
+### Set env config under .env file
+
+### Run migration by alembic
 
 ```
 python manage.py db init
@@ -12,7 +14,7 @@ python manage.py db migrate
 python manage.py db upgrade
 ```
 
-## Create user
+### Create user
 
 ```
 python manage.py shell
@@ -25,7 +27,7 @@ python manage.py shell
 
 ---
 
-## Heroku
+## Deploy to Heroku
 
 ```
 heroku git:remote -a [YOUR_HEROKU_APP]
