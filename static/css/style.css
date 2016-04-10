@@ -1,0 +1,11 @@
+body {
+    padding-top: 80px;
+}
+
+.btn-top-margin {
+    margin-top: 25px;
+}
+.admin-field {
+    text-align: left;
+    margin-top: 15px;
+}

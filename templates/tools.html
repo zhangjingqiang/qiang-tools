@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% include "nav.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      {% if tools|length == 0 %}
+      No tool yet.
+      {% else %}
+      <table class="table">
+        {% for t in tools %}
+        <tr>
+          {% if current_user.is_authenticated %}
+          <td><a href="{{ url_for('edit_tool', id=t.id) }}">{{ t.name }}</a></td>
+          <td><a href="{{ url_for('delete_tool', id=t.id) }}" class="btn btn-danger navbar-right">X</a></td>
+          {% else %}
+          <td>{{ t.name }}</td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+      <div class="btn-top-margin">
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('new_tool') }}" class="btn btn-primary">Add Tool</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
